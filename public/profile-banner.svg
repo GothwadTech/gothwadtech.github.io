@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="90" y1="25" x2="1200" y2="370" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#121820"/><stop offset=".58" stop-color="#0B0E13"/><stop offset="1" stop-color="#101921"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="180" y1="96" x2="615" y2="272" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9BD5FF"/><stop offset="1" stop-color="#4EACFF"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(0 190 -285 0 1055 180)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1379BD" stop-opacity=".28"/><stop offset="1" stop-color="#1379BD" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" stroke="#93BEE1" stroke-opacity=".08"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="360" rx="18" fill="url(#bg)"/>
+  <rect width="1280" height="360" rx="18" fill="url(#glow)"/>
+  <rect width="1280" height="360" rx="18" fill="url(#grid)"/>
+  <path d="M0 306H1280" stroke="#E7F4FF" stroke-opacity=".12"/>
+  <path d="M876 0V360" stroke="#E7F4FF" stroke-opacity=".1"/>
+  <circle cx="1077" cy="170" r="110" stroke="#73BDFF" stroke-opacity=".28"/>
+  <circle cx="1077" cy="170" r="77" stroke="#73BDFF" stroke-opacity=".52" stroke-dasharray="3 8"/>
+  <circle cx="1077" cy="170" r="42" fill="#0E1822" stroke="#93D0FF" stroke-opacity=".75"/>
+  <path d="M1094 151a24 24 0 1 0 14 27h-16v-10h27v8a35 35 0 1 1-10-30l-7 7a24 24 0 0 0-8-2Z" fill="#DDF2FF"/>
+  <path d="m1092 164 13-13 14 13-14 13-13-13Z" fill="#55B1FF"/>
+  <circle cx="1077" cy="170" r="5" fill="#EAF7FF"/>
+  <circle cx="1077" cy="60" r="5" fill="#9BE8BC"/>
+  <circle cx="980" cy="226" r="5" fill="#9BE8BC"/>
+  <circle cx="1174" cy="226" r="5" fill="#9BE8BC"/>
+  <path d="m1077 60-74 43M980 226l60-35m134 35-60-35" stroke="#7AC4FF" stroke-opacity=".38" stroke-dasharray="4 6"/>
+  <text x="78" y="84" fill="#9AD4FF" font-family="monospace" font-size="13" letter-spacing="4">SOFTWARE / SYSTEMS / PEOPLE</text>
+  <text x="74" y="173" fill="#F2F6FA" font-family="Arial,sans-serif" font-size="64" font-weight="700" letter-spacing="-3">GOTHWAD TECH</text>
+  <text x="78" y="222" fill="url(#blue)" font-family="Arial,sans-serif" font-size="24" font-weight="500">Useful software. Built in the open.</text>
+  <text x="78" y="272" fill="#9AA8B5" font-family="Arial,sans-serif" font-size="15">A connected set of software projects and public source.</text>
+  <text x="78" y="338" fill="#9BA8B5" font-family="monospace" font-size="10" letter-spacing="2">GOTHWADTECH  /  GITHUB PROFILE</text>
+  <text x="1195" y="338" fill="#9BA8B5" font-family="monospace" font-size="10" text-anchor="end" letter-spacing="2">01 — 06 / PROJECTS</text>
+</svg>

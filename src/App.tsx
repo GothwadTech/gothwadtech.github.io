@@ -1,358 +1,208 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
+import {
+  ArrowDownRight,
+  ArrowRight,
+  ArrowUpRight,
+  BookOpen,
+  Braces,
+  Fingerprint,
+  Github,
+  Globe2,
+  Mail,
+  Menu,
+  Monitor,
+  Radio,
+  Smartphone,
+  X,
+} from 'lucide-react';
+import {useState} from 'react';
 
-import React, { lazy, Suspense, useEffect, useState } from 'react';
-import { ThemeProvider } from './context/ThemeContext';
-import { LanguageProvider } from './context/LanguageContext';
-import { Navbar } from './components/Navbar';
-import { Footer } from './components/Footer';
-import { ProjectItem } from './types';
-import { MessageSquare, Phone } from 'lucide-react';
-import { COMPANY_INFO } from './data/companyData';
+const organization = 'https://github.com/GothwadTech';
 
-// Distinct Pages — code-split so the initial bundle only carries the portal.
-const PortalHome = lazy(() =>
-  import('./pages/PortalHome').then((m) => ({ default: m.PortalHome })),
-);
-// Corporate (agency) homepage. Kept reachable at /legacy until the company
-// site is live on about.gothwadtech.com — after that it gets deleted here.
-const HomePage = lazy(() =>
-  import('./pages/HomePage').then((m) => ({ default: m.HomePage })),
-);
-const SolutionsPage = lazy(() =>
-  import('./pages/SolutionsPage').then((m) => ({ default: m.SolutionsPage })),
-);
-const ProductsPage = lazy(() =>
-  import('./pages/ProductsPage').then((m) => ({ default: m.ProductsPage })),
-);
-const PortfolioPage = lazy(() =>
-  import('./pages/PortfolioPage').then((m) => ({ default: m.PortfolioPage })),
-);
-const AboutPage = lazy(() =>
-  import('./pages/AboutPage').then((m) => ({ default: m.AboutPage })),
-);
-const ContactPage = lazy(() =>
-  import('./pages/ContactPage').then((m) => ({ default: m.ContactPage })),
-);
-
-// Modals — only fetched when actually opened.
-const ProjectDetailModal = lazy(() =>
-  import('./components/ProjectDetailModal').then((m) => ({
-    default: m.ProjectDetailModal,
-  })),
-);
-const BrowserSimulatorModal = lazy(() =>
-  import('./components/BrowserSimulatorModal').then((m) => ({
-    default: m.BrowserSimulatorModal,
-  })),
-);
-const OrderModal = lazy(() =>
-  import('./components/OrderModal').then((m) => ({ default: m.OrderModal })),
-);
-
-const ROUTES = [
-  'legacy',
-  'solutions',
-  'products',
-  'portfolio',
-  'about',
-  'contact',
+const projects = [
+  {
+    name: 'Gothwad Accounts',
+    type: 'IDENTITY · WEB',
+    description: 'The shared identity and sign-in layer used across Gothwad products.',
+    icon: Fingerprint,
+    repo: 'accounts',
+    href: 'https://accounts.gothwadtech.com',
+    source: 'accounts',
+    color: 'blue',
+  },
+  {
+    name: 'Gothwad Mail',
+    type: 'PRODUCTIVITY · WEB',
+    description: 'A webmail client connected to Gothwad Accounts, with its own Mail API.',
+    icon: Mail,
+    repo: 'mail',
+    href: 'https://mail.gothwadtech.com',
+    source: 'mail',
+    color: 'violet',
+  },
+  {
+    name: 'GrixChat',
+    type: 'COMMUNICATION · WEB + ANDROID',
+    description: 'A messaging project with separate web and Android repositories.',
+    icon: Radio,
+    repo: 'grixchat',
+    href: 'https://grixchat.gothwadtech.com',
+    source: 'grixchat',
+    color: 'mint',
+  },
+  {
+    name: 'Gothwad Browser',
+    type: 'ANDROID · TV',
+    description: 'An Android browser project with a focus on phones, TVs and remote input.',
+    icon: Globe2,
+    repo: 'browser',
+    href: 'https://browser.gothwadtech.com',
+    source: 'browser',
+    color: 'blue',
+  },
+  {
+    name: 'Gothwad Education',
+    type: 'EDUCATION · WEB + ANDROID',
+    description: 'A school management and learning platform with web and Android projects.',
+    icon: BookOpen,
+    repo: 'education',
+    href: 'https://edu.gothwadtech.com',
+    source: 'education',
+    color: 'amber',
+  },
+  {
+    name: 'Gothwad AI Studio',
+    type: 'DEVELOPER TOOLS · WEB',
+    description: 'A mobile-first workspace for browsing and working with GitHub repositories.',
+    icon: Braces,
+    repo: 'ai',
+    href: 'https://ai.gothwadtech.com',
+    source: 'ai',
+    color: 'violet',
+  },
 ];
 
-// Legacy hash anchors that map onto a real page.
-const ROUTE_ALIASES: Record<string, string> = {
-  browser: 'products',
-  leadership: 'about',
-};
+const focusAreas = [
+  {number: '01', title: 'Identity & access', detail: 'Accounts · OAuth · shared sign-in', icon: Fingerprint},
+  {number: '02', title: 'Everyday software', detail: 'Mail · Drive · Meet · Store', icon: Monitor},
+  {number: '03', title: 'Apps & devices', detail: 'Android · browser · communication', icon: Smartphone},
+];
 
-const isRoute = (value: string) => ROUTES.includes(value);
-
-// '/products/' -> 'products'; '/Products' -> 'products'; unknown -> 'home'
-function pageFromPathname(pathname: string): string {
-  const segment = pathname.split('/').filter(Boolean)[0]?.toLowerCase() ?? '';
-  if (!segment) return 'home';
-  const target = ROUTE_ALIASES[segment] ?? segment;
-  return isRoute(target) ? target : 'home';
-}
-
-const pathForPage = (page: string) => (page === 'home' ? '/' : `/${page}`);
-
-const PAGE_META: Record<string, { title: string; description: string }> = {
-  home: {
-    title:
-      'Gothwad Tech — Sovereign Software Systems, Web Platforms & High-Performance Browsers',
-    description:
-      "Official website of Gothwad Tech — India's premier sovereign software powerhouse founded by Pawan Gothwad. Builders of the ultra-fast Gothwad Browser, enterprise web applications, mobile platforms, and deep-tech digital engineering.",
-  },
-  legacy: {
-    title: 'Gothwad Tech — Sovereign Software Systems & Digital Engineering',
-    description:
-      'The Gothwad Tech company site: enterprise web platforms, mobile apps, AI systems and the Gothwad Browser.',
-  },
-  solutions: {
-    title: 'Enterprise Solutions — Gothwad Tech',
-    description:
-      'Enterprise web and distributed systems, native and cross-platform mobile engineering, applied AI and intelligent automation, and zero-trust cybersecurity from Gothwad Tech.',
-  },
-  products: {
-    title: 'Products — Gothwad Browser & Sovereign Indian Tech | Gothwad Tech',
-    description:
-      'Explore the Gothwad Browser, GrixChat and Indogram — sovereign Indian consumer technology engineered under the Atmanirbhar Bharat mission.',
-  },
-  portfolio: {
-    title: 'Portfolio — Delivered Enterprise Projects | Gothwad Tech',
-    description:
-      'A selection of enterprise platforms, billing systems and high-concurrency web applications delivered by Gothwad Tech for clients across India.',
-  },
-  about: {
-    title: 'About & Leadership — Gothwad Tech',
-    description:
-      'Meet the leadership behind Gothwad Tech and read about our mission to build technological sovereignty for India.',
-  },
-  contact: {
-    title: 'Contact — Start a Project | Gothwad Tech',
-    description:
-      "Talk to the Gothwad Tech engineering team about enterprise web platforms, mobile apps, AI systems or a custom browser build. Reach us by phone, WhatsApp or email.",
-  },
-};
-
-function setMeta(selector: string, attr: 'content' | 'href', value: string) {
-  let el = document.querySelector(selector);
-  if (!el) {
-    // index.html defines the common tags; this only guards against a missing one.
-    const isLink = selector.startsWith('link');
-    el = document.createElement(isLink ? 'link' : 'meta');
-    if (isLink) el.setAttribute('rel', 'canonical');
-    else {
-      const name = selector.includes('property=') ? 'property' : 'name';
-      const raw = selector.match(/\[(?:name|property)="([^"]+)"\]/)?.[1];
-      if (raw) el.setAttribute(name, raw);
-    }
-    document.head.appendChild(el);
-  }
-  el.setAttribute(attr, value);
-}
-
-// '#Products' -> 'products'; '#docs' (a plain in-page anchor) -> null
-function pageFromHash(hash: string): string | null {
-  const raw = hash.replace(/^#/, '').toLowerCase();
-  if (!raw) return null;
-  const target = ROUTE_ALIASES[raw] ?? raw;
-  return isRoute(target) ? target : null;
-}
-
-function RouteFallback() {
-  return (
-    <div className="flex items-center justify-center py-24" role="status" aria-live="polite">
-      <span className="sr-only">Loading page…</span>
-      <div className="w-6 h-6 border-2 border-zinc-300 dark:border-zinc-700 border-t-[#0494f4] rounded-full animate-spin" />
-    </div>
-  );
-}
-
-function AppContent() {
-  // Page state: 'home' | 'solutions' | 'products' | 'portfolio' | 'about' | 'contact'
-  const [activePage, setActivePage] = useState<string>('home');
-
-  // Modal states
-  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
-  const [isSimulatorOpen, setIsSimulatorOpen] = useState(false);
-  const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
-  const [modalInitialService, setModalInitialService] = useState<string>('');
-
-  const handleOpenOrderModal = (serviceTitle?: string) => {
-    if (serviceTitle) {
-      setModalInitialService(serviceTitle);
-    }
-    setIsOrderModalOpen(true);
-  };
-
-  const handleNavigate = (page: string) => {
-    setActivePage(page);
-    const path = pathForPage(page);
-    if (window.location.pathname !== path) {
-      window.history.pushState({}, '', path);
-    }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-
-
-  // Real path routing, with a one-time redirect for legacy hash URLs.
-  useEffect(() => {
-    // Old links like gothwadtech.com/#products are rewritten to /products so
-    // they keep working, and so crawlers see a canonical path. Plain in-page
-    // anchors such as #docs are left untouched.
-    const legacy = pageFromHash(window.location.hash);
-    if (legacy) {
-      window.history.replaceState({}, '', pathForPage(legacy));
-    }
-
-    const sync = () => setActivePage(pageFromPathname(window.location.pathname));
-    sync();
-
-    window.addEventListener('popstate', sync);
-    return () => window.removeEventListener('popstate', sync);
-  }, []);
-
-  // Per-route SEO tags — an SPA only gets real SEO value from path routing
-  // if the crawled metadata actually changes with the route.
-  useEffect(() => {
-    const meta = PAGE_META[activePage] ?? PAGE_META.home;
-    const url = `https://gothwadtech.com${pathForPage(activePage)}`;
-
-    document.title = meta.title;
-    setMeta('meta[name="description"]', 'content', meta.description);
-    setMeta('meta[property="og:title"]', 'content', meta.title);
-    setMeta('meta[property="og:description"]', 'content', meta.description);
-    setMeta('meta[property="og:url"]', 'content', url);
-    setMeta('meta[name="twitter:title"]', 'content', meta.title);
-    setMeta('meta[name="twitter:description"]', 'content', meta.description);
-    setMeta('meta[name="twitter:url"]', 'content', url);
-    setMeta('link[rel="canonical"]', 'href', url);
-  }, [activePage]);
-
-  // The portal ships its own bar and footer, so the corporate Navbar/Footer
-  // must not double up on that route.
-  const isPortal = activePage === 'home';
+function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 selection:bg-[#0494f4]/25 selection:text-[#0494f4] flex flex-col font-sans transition-colors duration-200">
-      {/* Top Navbar — corporate pages only */}
-      {!isPortal && (
-        <Navbar
-          activePage={activePage}
-          onNavigate={handleNavigate}
-          onOpenOrderModal={handleOpenOrderModal}
-        />
-      )}
-
-      {/* Main Page Body */}
-      <main className={`flex-1 ${isPortal ? '' : 'pt-14'}`}>
-        <Suspense fallback={<RouteFallback />}>
-          {activePage === 'home' && <PortalHome />}
-
-          {activePage === 'legacy' && (
-            <HomePage
-              onNavigate={handleNavigate}
-              onOpenOrderModal={handleOpenOrderModal}
-              onOpenBrowserSimulator={() => setIsSimulatorOpen(true)}
-            />
-          )}
-
-          {activePage === 'solutions' && (
-            <SolutionsPage
-              onOpenOrderModal={handleOpenOrderModal}
-              onNavigate={handleNavigate}
-            />
-          )}
-
-          {activePage === 'products' && (
-            <ProductsPage
-              onOpenBrowserSimulator={() => setIsSimulatorOpen(true)}
-              onOpenOrderModal={handleOpenOrderModal}
-            />
-          )}
-
-          {activePage === 'portfolio' && (
-            <PortfolioPage
-              onSelectProject={(proj) => setSelectedProject(proj)}
-              onOpenOrderModal={handleOpenOrderModal}
-            />
-          )}
-
-          {activePage === 'about' && (
-            <AboutPage
-              onOpenOrderModal={handleOpenOrderModal}
-              onNavigate={handleNavigate}
-            />
-          )}
-
-          {activePage === 'contact' && (
-            <ContactPage
-              onOpenOrderModal={handleOpenOrderModal}
-            />
-          )}
-        </Suspense>
-      </main>
-
-      {/* Footer — corporate pages only */}
-      {!isPortal && (
-        <Footer
-          onNavigate={handleNavigate}
-          onOpenOrderModal={handleOpenOrderModal}
-        />
-      )}
-
-      {/* Floating Action WhatsApp & Phone Contact — corporate pages only */}
-      <div
-        className={`fixed bottom-5 right-5 z-40 flex items-center gap-2 ${
-          isPortal ? 'hidden' : ''
-        }`}
-      >
-        <a
-          href="tel:07339904665"
-          className="hidden sm:flex items-center gap-1.5 px-3 py-2 rounded-full bg-zinc-900 dark:bg-zinc-800 hover:bg-zinc-800 text-white font-bold text-xs shadow-md border border-zinc-700 transition-colors cursor-pointer"
-          title="Direct Call Desk"
-        >
-          <Phone className="w-3.5 h-3.5 text-[#0494f4]" />
-          <span>+91 73399 04665</span>
+    <main>
+      <header className="topbar">
+        <a className="brand" href="#top" aria-label="Gothwad Tech home">
+          <span className="brand-mark">G<span>.</span></span>
+          <span>GOTHWAD<span className="brand-light">TECH</span></span>
         </a>
-
-        <a
-          href={`https://wa.me/${COMPANY_INFO.whatsappNumberOnly}?text=Hello%20Gothwad%20Tech%20Team,%20I%20want%20to%20discuss%20a%20digital%20solution/project!`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 px-3.5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-md transition-colors cursor-pointer"
-          aria-label="Direct WhatsApp Contact"
+        <button
+          type="button"
+          aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
+          aria-expanded={menuOpen}
+          className="mobile-menu"
+          onClick={() => setMenuOpen(!menuOpen)}
         >
-          <MessageSquare className="w-4 h-4 fill-white" />
-          <span>WhatsApp Desk</span>
-        </a>
-      </div>
+          {menuOpen ? <X size={19} /> : <Menu size={19} />}
+        </button>
+        <nav className={menuOpen ? 'nav nav-open' : 'nav'} aria-label="Main navigation">
+          <a href="#work" onClick={() => setMenuOpen(false)}>Projects</a>
+          <a href="#approach" onClick={() => setMenuOpen(false)}>How we build</a>
+          <a href="https://docs.gothwadtech.com">Documentation <ArrowUpRight size={13} /></a>
+          <a className="nav-cta" href={organization} target="_blank" rel="noreferrer">
+            GitHub <ArrowUpRight size={14} />
+          </a>
+        </nav>
+      </header>
 
-      {/* Interactive Modals — each chunk is fetched only when opened */}
-      {selectedProject && (
-        <Suspense fallback={null}>
-          <ProjectDetailModal
-            project={selectedProject}
-            onClose={() => setSelectedProject(null)}
-            onOpenOrderModal={handleOpenOrderModal}
-          />
-        </Suspense>
-      )}
+      <section className="hero" id="top">
+        <div className="hero-copy">
+          <div className="eyebrow"><span className="status-dot" /> INDEPENDENT SOFTWARE STUDIO <span className="eyebrow-line" /></div>
+          <h1>Good software<br />should feel <span>inevitable.</span></h1>
+          <p className="hero-lede">
+            Gothwad Tech is building a connected set of useful products — from identity and communication to tools for the devices people use every day.
+          </p>
+          <div className="hero-actions">
+            <a className="button button-primary" href="#work">Explore the work <ArrowRight size={16} /></a>
+            <a className="text-link" href="https://gothwadtech.com" target="_blank" rel="noreferrer">Visit the official website <ArrowUpRight size={15} /></a>
+          </div>
+          <div className="hero-footnote"><span>BUILT IN PUBLIC</span><span className="footnote-divider" />
+            Independent projects. Public repositories. Clear boundaries.</div>
+        </div>
+        <div className="hero-art" aria-label="Abstract illustration of connected software systems" role="img">
+          <div className="art-grid" />
+          <div className="orbit orbit-one" /><div className="orbit orbit-two" />
+          <div className="art-crosshair crosshair-one" /><div className="art-crosshair crosshair-two" />
+          <div className="art-label label-top">SYSTEMS / 01</div><div className="art-label label-bottom">A CONNECTED PRACTICE</div>
+          <div className="core-glow" />
+          <div className="core"><span className="core-symbol">G<span>.</span></span><span className="core-caption">GOTHWAD<br />TECH</span></div>
+          <div className="orbit-node node-a"><Fingerprint size={17} /></div>
+          <div className="orbit-node node-b"><Mail size={17} /></div>
+          <div className="orbit-node node-c"><Smartphone size={17} /></div>
+          <div className="signal signal-a" /><div className="signal signal-b" /><div className="signal signal-c" />
+          <div className="art-index">01—06<br /><span>PROJECTS</span></div>
+        </div>
+        <a className="scroll-cue" href="#work"><ArrowDownRight size={15} /> SCROLL TO EXPLORE</a>
+      </section>
 
-      {isSimulatorOpen && (
-        <Suspense fallback={null}>
-          <BrowserSimulatorModal
-            isOpen
-            onClose={() => setIsSimulatorOpen(false)}
-            onOpenOrderModal={handleOpenOrderModal}
-          />
-        </Suspense>
-      )}
+      <section className="intro-strip" id="approach">
+        <div className="section-kicker">A CONNECTED PRACTICE <span>—</span> 2026</div>
+        <p>Not another list of promises.<br /><strong>A growing body of software, built in the open.</strong></p>
+        <div className="focus-list">
+          {focusAreas.map(({number, title, detail, icon: Icon}) => (
+            <article className="focus-item" key={number}>
+              <span className="focus-number">{number}</span><Icon size={19} strokeWidth={1.6} />
+              <div><h3>{title}</h3><p>{detail}</p></div><ArrowUpRight className="focus-arrow" size={15} />
+            </article>
+          ))}
+        </div>
+      </section>
 
-      {isOrderModalOpen && (
-        <Suspense fallback={null}>
-          <OrderModal
-            isOpen
-            onClose={() => setIsOrderModalOpen(false)}
-            initialService={modalInitialService}
-          />
-        </Suspense>
-      )}
-    </div>
+      <section className="work-section" id="work">
+        <div className="section-heading">
+          <div><div className="section-kicker">SELECTED PROJECTS <span>—</span> 01 / 06</div>
+            <h2>Made to be <span>useful.</span></h2></div>
+          <p>Explore product projects and their source repositories. Availability and feature details can change; the source repo is the best place to verify implementation.</p>
+        </div>
+        <div className="project-grid">
+          {projects.map(({name, type, description, icon: Icon, repo, href, source, color}, index) => (
+            <article className={`project-card color-${color}`} key={repo}>
+              <div className="project-top"><span className="project-number">0{index + 1}</span><span className="project-type">{type}</span><Icon className="project-icon" size={21} strokeWidth={1.5} /></div>
+              <h3>{name}</h3><p>{description}</p>
+              <div className="project-bottom"><span className="repo-label"><span className="repo-dot" /> {repo}</span>
+                <div className="project-links"><a href={href} target="_blank" rel="noreferrer" aria-label={`Open ${name} website`}><Globe2 size={15} /> Visit</a>
+                  <a href={`${organization}/${source}`} target="_blank" rel="noreferrer" aria-label={`View ${name} source repository`}><Github size={15} /> Source</a></div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="work-footer"><span>Curated from public Gothwad Tech repositories.</span><a href={organization} target="_blank" rel="noreferrer">Browse all repositories <ArrowRight size={15} /></a></div>
+      </section>
+
+      <section className="principles">
+        <div className="principles-left"><div className="section-kicker">ENGINEERING, NOT HYPE <span>—</span> 02</div>
+          <h2>Say what’s true.<br /><span>Show the work.</span></h2>
+        </div>
+        <div className="principles-right">
+          <p>Gothwad Tech’s public repositories span web apps, Android apps, shared identity and developer documentation. Each project has its own scope, maturity and setup; we keep those distinctions visible.</p>
+          <div className="principle-row"><span>01</span><div><h3>Source is the reference</h3><p>Read the project README and linked docs for current implementation details.</p></div></div>
+          <div className="principle-row"><span>02</span><div><h3>Not every repo is a release</h3><p>A public repository is not, by itself, a promise of production readiness or support.</p></div></div>
+          <div className="principle-row"><span>03</span><div><h3>Built for real contexts</h3><p>Projects range from Android and TV experiences to web applications and backend services.</p></div></div>
+        </div>
+      </section>
+
+      <section className="closing-cta">
+        <div className="closing-mark">G<span>.</span></div>
+        <div><div className="section-kicker">FOLLOW THE BUILD</div><h2>Curious what’s next?</h2><p>See the code, read the docs, or start with the official Gothwad Tech site.</p></div>
+        <div className="closing-links"><a href={organization} target="_blank" rel="noreferrer">Explore GitHub <ArrowUpRight size={15} /></a><a href="https://docs.gothwadtech.com" target="_blank" rel="noreferrer">Read the docs <ArrowUpRight size={15} /></a><a href="https://gothwadtech.com" target="_blank" rel="noreferrer">Official website <ArrowUpRight size={15} /></a></div>
+      </section>
+
+      <footer className="footer"><a className="brand footer-brand" href="#top"><span className="brand-mark">G<span>.</span></span><span>GOTHWAD<span className="brand-light">TECH</span></span></a>
+        <span>Independent software, in progress.</span><div><a href={organization} target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={12} /></a><span>© {new Date().getFullYear()} Gothwad Tech</span></div>
+      </footer>
+    </main>
   );
 }
 
-export default function App() {
-  return (
-    <ThemeProvider>
-      <LanguageProvider>
-        <AppContent />
-      </LanguageProvider>
-    </ThemeProvider>
-  );
-}
+export default App;
