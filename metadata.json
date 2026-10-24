@@ -1,6 +1,4 @@
 {
-  "name": "Gothwad Tech",
-  "description": "Official corporate platform of Gothwad Tech showcasing sovereign deep-tech digital infrastructure, flagship products (Gothwad Browser, GrixChat, Indogram), enterprise software services, portfolio gallery, leadership, and client systems.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "name": "Gothwad Tech — Software projects and open source",
+  "description": "A public-facing introduction to Gothwad Tech, with a curated selection of software projects, source repositories, and developer documentation. Project availability and maturity vary; consult each source repository for current details."
 }
