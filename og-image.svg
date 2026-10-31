@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#091018"/><stop offset=".56" stop-color="#0d1721"/><stop offset="1" stop-color="#142b3d"/></linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2=".2"><stop stop-color="#a9ddff"/><stop offset="1" stop-color="#55b6ff"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#167fbd" stop-opacity=".34"/><stop offset="1" stop-color="#167fbd" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M44 0H0V44" fill="none" stroke="#a4d5f5" stroke-opacity=".09"/></pattern>
+  </defs>
+  <rect width="1200" height="630" rx="28" fill="url(#bg)"/><rect width="1200" height="630" rx="28" fill="url(#glow)"/><rect width="1200" height="630" rx="28" fill="url(#grid)"/>
+  <path d="M0 530h1200M820 0v630" stroke="#e9f5ff" stroke-opacity=".13"/>
+  <circle cx="1002" cy="286" r="148" fill="none" stroke="#79c7ff" stroke-opacity=".24" stroke-width="2"/><circle cx="1002" cy="286" r="106" fill="none" stroke="#79c7ff" stroke-opacity=".48" stroke-width="2" stroke-dasharray="5 12"/>
+  <circle cx="1002" cy="286" r="64" fill="#102131" stroke="#9bd8ff" stroke-opacity=".75" stroke-width="2"/>
+  <path d="M1016 260a39 39 0 1 0 23 45h-27v-16h45v13a59 59 0 1 1-16-51l-12 12a39 39 0 0 0-13-3Z" fill="#e2f4ff"/><circle cx="1002" cy="286" r="7" fill="#5ebcff"/>
+  <circle cx="1002" cy="138" r="7" fill="#a4eac0"/><circle cx="874" cy="360" r="7" fill="#a4eac0"/><circle cx="1130" cy="360" r="7" fill="#a4eac0"/><path d="m1002 138-100 57m-28 165 82-48m174 48-82-48" stroke="#8acfff" stroke-opacity=".55" stroke-width="2" stroke-dasharray="5 8"/>
+  <text x="82" y="122" fill="#a3d9ff" font-family="Arial,sans-serif" font-size="17" letter-spacing="5">PUBLIC INFORMATION · PRODUCTS · SOURCE</text>
+  <text x="75" y="252" fill="#f4f7fa" font-family="Arial,sans-serif" font-size="84" font-weight="700" letter-spacing="-5">GOTHWAD TECH</text>
+  <text x="82" y="327" fill="url(#blue)" font-family="Arial,sans-serif" font-size="36" font-weight="600">Software for a more connected everyday.</text>
+  <text x="82" y="393" fill="#b4c1cc" font-family="Arial,sans-serif" font-size="21">Products · Leadership · Documentation · Public repositories</text>
+  <text x="82" y="575" fill="#a3b1be" font-family="Arial,sans-serif" font-size="15" letter-spacing="3">GOTHWADTECH.GITHUB.IO</text>
+  <text x="1118" y="575" fill="#a3b1be" font-family="Arial,sans-serif" font-size="15" text-anchor="end">PUBLIC INFORMATION HUB</text>
+</svg>

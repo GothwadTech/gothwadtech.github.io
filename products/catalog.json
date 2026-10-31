@@ -1,0 +1,659 @@
+[
+  {
+    "id": "accounts",
+    "slug": "gothwad-accounts",
+    "name": "Gothwad Accounts",
+    "category": "identity",
+    "platforms": [
+      "Web",
+      "OAuth 2.0"
+    ],
+    "goal": [
+      "work",
+      "build"
+    ],
+    "desc": "An identity and sign-in project. Its public repository describes account sessions and OAuth-based connections.",
+    "url": "https://accounts.gothwadtech.com",
+    "repos": [
+      "accounts",
+      "accountsapp"
+    ],
+    "logo": "accounts.png",
+    "tagline": "Identity and sign-in project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/accounts",
+      "https://github.com/GothwadTech/accountsapp"
+    ],
+    "category_label": "Identity",
+    "detail": "/products/gothwad-accounts/"
+  },
+  {
+    "id": "mail",
+    "slug": "gothwad-mail",
+    "name": "Gothwad Mail",
+    "category": "productivity",
+    "platforms": [
+      "Web"
+    ],
+    "goal": [
+      "work",
+      "communicate"
+    ],
+    "desc": "An email project with a web application and supporting service components described in its public repository.",
+    "url": "https://mail.gothwadtech.com",
+    "repos": [
+      "mail"
+    ],
+    "logo": "mail.png",
+    "tagline": "Email project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/mail"
+    ],
+    "category_label": "Productivity",
+    "detail": "/products/gothwad-mail/"
+  },
+  {
+    "id": "drive",
+    "slug": "gothwad-drive",
+    "name": "Gothwad Drive",
+    "category": "productivity",
+    "platforms": [
+      "Web"
+    ],
+    "goal": [
+      "work",
+      "files"
+    ],
+    "desc": "A web-based file workspace project. Consult its repository for current scope, dependencies and release information.",
+    "url": "https://drive.gothwadtech.com",
+    "repos": [
+      "drive"
+    ],
+    "logo": "drive.png",
+    "tagline": "Web file workspace project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/drive"
+    ],
+    "category_label": "Productivity",
+    "detail": "/products/gothwad-drive/"
+  },
+  {
+    "id": "meet",
+    "slug": "gothwad-meet",
+    "name": "Gothwad Meet",
+    "category": "communication",
+    "platforms": [
+      "Web"
+    ],
+    "goal": [
+      "communicate"
+    ],
+    "desc": "A browser-based meetings project listed in the official ecosystem catalogue and represented by a public repository.",
+    "url": "https://meet.gothwadtech.com",
+    "repos": [
+      "meet"
+    ],
+    "logo": null,
+    "tagline": "Browser meetings project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/meet"
+    ],
+    "category_label": "Communication",
+    "detail": "/products/gothwad-meet/"
+  },
+  {
+    "id": "calendar",
+    "slug": "gothwad-calendar",
+    "name": "Gothwad Calendar",
+    "category": "productivity",
+    "platforms": [
+      "Web"
+    ],
+    "goal": [
+      "work"
+    ],
+    "desc": "A calendar project listed in the official ecosystem catalogue. A matching public source repository was not found in the organization repository list reviewed for this site.",
+    "url": "https://calender.gothwadtech.com",
+    "repos": [],
+    "logo": null,
+    "tagline": "Calendar project",
+    "repo_urls": [],
+    "category_label": "Productivity",
+    "detail": "/products/gothwad-calendar/"
+  },
+  {
+    "id": "contacts",
+    "slug": "gothwad-contacts",
+    "name": "Gothwad Contacts",
+    "category": "productivity",
+    "platforms": [
+      "Web"
+    ],
+    "goal": [
+      "work"
+    ],
+    "desc": "A contacts project listed in the official ecosystem catalogue. A matching public source repository was not found in the organization repository list reviewed for this site.",
+    "url": "https://contacts.gothwadtech.com",
+    "repos": [],
+    "logo": null,
+    "tagline": "Contacts project",
+    "repo_urls": [],
+    "category_label": "Productivity",
+    "detail": "/products/gothwad-contacts/"
+  },
+  {
+    "id": "notes",
+    "slug": "gothwad-notes",
+    "name": "Gothwad Notes",
+    "category": "productivity",
+    "platforms": [
+      "Web"
+    ],
+    "goal": [
+      "work"
+    ],
+    "desc": "A notes project listed in the official ecosystem catalogue and represented by a public repository. Current capabilities should be checked in its README.",
+    "url": "https://notes.gothwadtech.com",
+    "repos": [
+      "notes"
+    ],
+    "logo": null,
+    "tagline": "Notes project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/notes"
+    ],
+    "category_label": "Productivity",
+    "detail": "/products/gothwad-notes/"
+  },
+  {
+    "id": "store",
+    "slug": "kiwi-store",
+    "name": "Kiwi Store",
+    "category": "media",
+    "platforms": [
+      "Web",
+      "Android"
+    ],
+    "goal": [
+      "discover",
+      "android"
+    ],
+    "desc": "An app discovery and distribution project with public web and Android repositories. Listing does not imply that a particular app or release is available.",
+    "url": "https://store.gothwadtech.com",
+    "repos": [
+      "store",
+      "storeapp"
+    ],
+    "logo": "store.png",
+    "tagline": "App discovery project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/store",
+      "https://github.com/GothwadTech/storeapp"
+    ],
+    "category_label": "Media & apps",
+    "detail": "/products/kiwi-store/"
+  },
+  {
+    "id": "tube",
+    "slug": "plus-tube",
+    "name": "PlusTube",
+    "category": "media",
+    "platforms": [
+      "Web",
+      "Android"
+    ],
+    "goal": [
+      "watch",
+      "android"
+    ],
+    "desc": "A video and media project with public web and Android repositories. Consult the project source and release pages for current status.",
+    "url": "https://tube.gothwadtech.com",
+    "repos": [
+      "tubeweb",
+      "tubeapp"
+    ],
+    "logo": "tube.png",
+    "tagline": "Video and media project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/tubeweb",
+      "https://github.com/GothwadTech/tubeapp"
+    ],
+    "category_label": "Media & apps",
+    "detail": "/products/plus-tube/"
+  },
+  {
+    "id": "grixchat",
+    "slug": "grixchat",
+    "name": "GrixChat",
+    "category": "communication",
+    "platforms": [
+      "Web",
+      "Android"
+    ],
+    "goal": [
+      "communicate",
+      "android"
+    ],
+    "desc": "A messaging project represented by public web and Android repositories. The current feature set and service status are not verified here.",
+    "url": "https://grixchat.gothwadtech.com",
+    "repos": [
+      "grixchat",
+      "grixchatapp"
+    ],
+    "logo": "grixchat.png",
+    "tagline": "Messaging project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/grixchat",
+      "https://github.com/GothwadTech/grixchatapp"
+    ],
+    "category_label": "Communication",
+    "detail": "/products/grixchat/"
+  },
+  {
+    "id": "indogram",
+    "slug": "indogram",
+    "name": "Indogram",
+    "category": "communication",
+    "platforms": [
+      "Android"
+    ],
+    "goal": [
+      "communicate",
+      "android"
+    ],
+    "desc": "A messaging project represented by a public Android repository. See its source for the current project scope.",
+    "url": "https://indogram.gothwadtech.com",
+    "repos": [
+      "indogramapp"
+    ],
+    "logo": "indogram.png",
+    "tagline": "Messaging project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/indogramapp"
+    ],
+    "category_label": "Communication",
+    "detail": "/products/indogram/"
+  },
+  {
+    "id": "browser",
+    "slug": "gothwad-browser",
+    "name": "Gothwad Browser",
+    "category": "devices",
+    "platforms": [
+      "Android",
+      "Android TV"
+    ],
+    "goal": [
+      "browse",
+      "android"
+    ],
+    "desc": "An Android browser project with repository references to phone and TV use. Current platform support and availability should be checked in the source.",
+    "url": "https://browser.gothwadtech.com",
+    "repos": [
+      "browser"
+    ],
+    "logo": "browser.png",
+    "tagline": "Android browser project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/browser"
+    ],
+    "category_label": "Devices",
+    "detail": "/products/gothwad-browser/"
+  },
+  {
+    "id": "launcher",
+    "slug": "gothwad-launcher",
+    "name": "Gothwad Launcher",
+    "category": "devices",
+    "platforms": [
+      "Android TV"
+    ],
+    "goal": [
+      "devices",
+      "android"
+    ],
+    "desc": "An Android TV launcher project represented by a public repository. Consult the repository for device requirements and current releases.",
+    "url": null,
+    "repos": [
+      "launcher"
+    ],
+    "logo": "launcher.png",
+    "tagline": "Android TV launcher project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/launcher"
+    ],
+    "category_label": "Devices",
+    "detail": "/products/gothwad-launcher/"
+  },
+  {
+    "id": "manager",
+    "slug": "gothwad-manager",
+    "name": "Gothwad Manager",
+    "category": "devices",
+    "platforms": [
+      "Android"
+    ],
+    "goal": [
+      "files",
+      "android"
+    ],
+    "desc": "An Android file-management project represented by a public repository. Its README and releases are the source for current details.",
+    "url": null,
+    "repos": [
+      "manager"
+    ],
+    "logo": "manager.png",
+    "tagline": "Android file-management project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/manager"
+    ],
+    "category_label": "Devices",
+    "detail": "/products/gothwad-manager/"
+  },
+  {
+    "id": "remotedesk",
+    "slug": "gothwad-remote-desktop",
+    "name": "Gothwad Remote Desktop",
+    "category": "devtools",
+    "platforms": [
+      "Web",
+      "Windows"
+    ],
+    "goal": [
+      "build",
+      "devices"
+    ],
+    "desc": "A remote desktop project with public web and Windows-oriented source. Review the project’s security, deployment and release information before use.",
+    "url": "https://remotedesk.gothwadtech.com",
+    "repos": [
+      "remotedesk"
+    ],
+    "logo": null,
+    "tagline": "Remote desktop project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/remotedesk"
+    ],
+    "category_label": "Developer tools",
+    "detail": "/products/gothwad-remote-desktop/"
+  },
+  {
+    "id": "internet",
+    "slug": "gothwad-internet",
+    "name": "Gothwad Internet",
+    "category": "devices",
+    "platforms": [
+      "Android"
+    ],
+    "goal": [
+      "browse",
+      "android"
+    ],
+    "desc": "An Android browser project represented by a public repository. It is separate from Gothwad Browser; check each source independently.",
+    "url": null,
+    "repos": [
+      "internet"
+    ],
+    "logo": "internet.png",
+    "tagline": "Android browser project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/internet"
+    ],
+    "category_label": "Devices",
+    "detail": "/products/gothwad-internet/"
+  },
+  {
+    "id": "computer",
+    "slug": "gothwad-computer",
+    "name": "Gothwad Computer",
+    "category": "devices",
+    "platforms": [
+      "Android",
+      "TV"
+    ],
+    "goal": [
+      "devices",
+      "android"
+    ],
+    "desc": "An Android large-screen and desktop-style project represented by a public repository. Current device compatibility is not independently verified here.",
+    "url": null,
+    "repos": [
+      "computer"
+    ],
+    "logo": "computer.png",
+    "tagline": "Android large-screen project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/computer"
+    ],
+    "category_label": "Devices",
+    "detail": "/products/gothwad-computer/"
+  },
+  {
+    "id": "education",
+    "slug": "gothwad-education",
+    "name": "Gothwad Education",
+    "category": "education",
+    "platforms": [
+      "Web",
+      "Android"
+    ],
+    "goal": [
+      "learn",
+      "android"
+    ],
+    "desc": "An education and school-workflow project with public web and Android repositories. Consult those sources for current scope and availability.",
+    "url": "https://education.gothwadtech.com",
+    "repos": [
+      "education",
+      "educationapp"
+    ],
+    "logo": "education.jpg",
+    "tagline": "Education project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/education",
+      "https://github.com/GothwadTech/educationapp"
+    ],
+    "category_label": "Education",
+    "detail": "/products/gothwad-education/"
+  },
+  {
+    "id": "clashdrive",
+    "slug": "clashdrive",
+    "name": "ClashDrive",
+    "category": "productivity",
+    "platforms": [
+      "Web"
+    ],
+    "goal": [
+      "files",
+      "work"
+    ],
+    "desc": "A file workspace project represented by a public repository. The repository is a fork; review upstream attribution and licensing before reuse.",
+    "url": "https://clashdrive.gothwadtech.com",
+    "repos": [
+      "Clashdrive"
+    ],
+    "logo": "clashdrive.png",
+    "tagline": "File workspace project · fork",
+    "repo_urls": [
+      "https://github.com/GothwadTech/Clashdrive"
+    ],
+    "category_label": "Productivity",
+    "detail": "/products/clashdrive/"
+  },
+  {
+    "id": "ai",
+    "slug": "gothwad-ai-studio",
+    "name": "Gothwad AI Studio",
+    "category": "devtools",
+    "platforms": [
+      "Web",
+      "Mobile"
+    ],
+    "goal": [
+      "build"
+    ],
+    "desc": "A developer-oriented web workspace project represented by a public repository. The title does not imply a particular model, capability or service level.",
+    "url": "https://ai.gothwadtech.com",
+    "repos": [
+      "ai"
+    ],
+    "logo": "ai-studio.png",
+    "tagline": "Developer workspace project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/ai"
+    ],
+    "category_label": "Developer tools",
+    "detail": "/products/gothwad-ai-studio/"
+  },
+  {
+    "id": "plusgit",
+    "slug": "plusgit",
+    "name": "PlusGit",
+    "category": "devtools",
+    "platforms": [
+      "Android",
+      "Web"
+    ],
+    "goal": [
+      "build",
+      "android"
+    ],
+    "desc": "A Git and repository-management project represented by a public repository. Check that repository for current platform and release details.",
+    "url": null,
+    "repos": [
+      "gitplus"
+    ],
+    "logo": "plusgit.svg",
+    "tagline": "Git client project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/gitplus"
+    ],
+    "category_label": "Developer tools",
+    "detail": "/products/plusgit/"
+  },
+  {
+    "id": "accountsapp",
+    "slug": "gothwad-accounts-app",
+    "name": "Gothwad Accounts App",
+    "category": "identity",
+    "platforms": [
+      "Android"
+    ],
+    "goal": [
+      "work",
+      "android"
+    ],
+    "desc": "An Android companion project associated with Gothwad Accounts. Its repository is the source for current implementation details.",
+    "url": null,
+    "repos": [
+      "accountsapp"
+    ],
+    "logo": "accounts.png",
+    "tagline": "Android account companion project",
+    "repo_urls": [
+      "https://github.com/GothwadTech/accountsapp"
+    ],
+    "category_label": "Identity",
+    "detail": "/products/gothwad-accounts-app/"
+  },
+  {
+    "id": "domains",
+    "slug": "gothwad-domains",
+    "name": "Gothwad Domains",
+    "category": "company",
+    "platforms": [
+      "Web",
+      "GitHub"
+    ],
+    "goal": [
+      "discover"
+    ],
+    "desc": "A public repository related to Gothwad Tech domain and ecosystem information. It is a source reference, not a guarantee that every listed domain is currently active.",
+    "url": null,
+    "repos": [
+      "domains"
+    ],
+    "logo": null,
+    "tagline": "Domain information repository",
+    "repo_urls": [
+      "https://github.com/GothwadTech/domains"
+    ],
+    "category_label": "Company resources",
+    "detail": "/products/gothwad-domains/"
+  },
+  {
+    "id": "docs",
+    "slug": null,
+    "name": "Gothwad Docs",
+    "category": "company",
+    "platforms": [
+      "Web"
+    ],
+    "goal": [
+      "build"
+    ],
+    "desc": "The documentation portal is maintained separately. This website links to it instead of duplicating developer guides or API references.",
+    "url": "https://docs.gothwadtech.com",
+    "repos": [
+      "docs"
+    ],
+    "logo": "docs.svg",
+    "tagline": "Separate documentation portal",
+    "resource": true,
+    "repo_urls": [
+      "https://github.com/GothwadTech/docs"
+    ],
+    "category_label": "Company resources",
+    "detail": "/developers/"
+  },
+  {
+    "id": "ceo",
+    "slug": null,
+    "name": "CEO profile — Yuvkesh Meena",
+    "category": "company",
+    "platforms": [
+      "Web"
+    ],
+    "goal": [
+      "discover"
+    ],
+    "desc": "The public CEO profile is maintained on its own site. Leadership roles shown here follow the company information supplied for this website.",
+    "url": "https://ceo.gothwadtech.com",
+    "repos": [
+      "ceo"
+    ],
+    "logo": null,
+    "tagline": "Leadership profile",
+    "resource": true,
+    "repo_urls": [
+      "https://github.com/GothwadTech/ceo"
+    ],
+    "category_label": "Company resources",
+    "detail": "/leadership/"
+  },
+  {
+    "id": "about",
+    "slug": null,
+    "name": "Gothwad Tech company portal",
+    "category": "company",
+    "platforms": [
+      "Web"
+    ],
+    "goal": [
+      "discover"
+    ],
+    "desc": "The separate GothwadTech.com portal is the app and ecosystem destination. This GitHub Pages site remains the public-information hub.",
+    "url": "https://gothwadtech.com",
+    "repos": [
+      "gothwadtech"
+    ],
+    "logo": "company.png",
+    "tagline": "Separate company and app portal",
+    "resource": true,
+    "repo_urls": [
+      "https://github.com/GothwadTech/gothwadtech"
+    ],
+    "category_label": "Company resources",
+    "detail": "/about/"
+  }
+]
