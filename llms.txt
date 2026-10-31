@@ -1,0 +1,44 @@
+# Gothwad Tech — Public Information Hub
+
+> This English-language website is the public company-information and source-discovery hub for Gothwad Tech. It is distinct from GothwadTech.com, the product/app portal. Developer documentation is maintained separately at docs.gothwadtech.com and is linked rather than duplicated here.
+
+## Main pages
+- [Home](https://gothwadtech.github.io/): Company overview, selected projects and confirmed leadership
+- [Products](https://gothwadtech.github.io/products/): 26 public ecosystem records, source links, search/filter and listing-only comparison
+- [Find a product](https://gothwadtech.github.io/find-a-product/): Browser-only goal/platform filter
+- [Product ecosystem map](https://gothwadtech.github.io/integrations/): Portfolio relationships; not a verified integration matrix
+- [Repositories](https://gothwadtech.github.io/repositories/): Dated snapshot of 54 public GitHub repositories and licence metadata
+- [Leadership](https://gothwadtech.github.io/leadership/): Pawan Gothwad (Founder), Yuvkesh Meena (CEO), Vishnu (Co-founder)
+- [About](https://gothwadtech.github.io/about/): Company context and site boundaries
+- [Direction](https://gothwadtech.github.io/roadmap/): Non-dated themes, not launch commitments
+- [FAQ](https://gothwadtech.github.io/faq/): Public information and project-source guidance
+- [Contribute](https://gothwadtech.github.io/contribute/): Routes to project sources and separate docs
+- [Site map](https://gothwadtech.github.io/site-map/): Internal pages and product references
+
+## Trust and public information
+- [Trust](https://gothwadtech.github.io/trust/)
+- [Status](https://gothwadtech.github.io/status/): No consolidated real-time status feed is published here
+- [Privacy](https://gothwadtech.github.io/privacy/): Applies only to this static information hub; no analytics are embedded
+- [Security](https://gothwadtech.github.io/security/): Project-specific reporting; no central intake is published here
+- [Licensing](https://gothwadtech.github.io/licensing/): Check the exact repository; no licence is inferred
+- [Support](https://gothwadtech.github.io/support/): Project-specific routes, no universal SLA
+- [Legal sources](https://gothwadtech.github.io/legal/)
+- [Accessibility](https://gothwadtech.github.io/accessibility/): No independent conformance audit is claimed
+- [Careers](https://gothwadtech.github.io/careers/): No roles are published on this hub
+- [Events](https://gothwadtech.github.io/events/): No public event schedule is published here
+- [Press](https://gothwadtech.github.io/press/): No newsroom or press contact is published here
+- [Media kit](https://gothwadtech.github.io/media-kit/)
+- [Website updates](https://gothwadtech.github.io/updates/): Changes to this information site only, not product releases
+- [Glossary](https://gothwadtech.github.io/glossary/)
+- [Contact](https://gothwadtech.github.io/contact/)
+
+## Separate official destinations
+- [GothwadTech.com](https://gothwadtech.com/): Product and app discovery portal
+- [Developer docs](https://docs.gothwadtech.com/): Separate technical documentation portal
+- [GitHub organization](https://github.com/GothwadTech): Current public source repositories
+- [CEO profile](https://ceo.gothwadtech.com/)
+- [Co-founder profile](https://cofounder.gothwadtech.com/)
+
+## Accuracy
+
+Repository counts, licence labels and portal records are snapshots reviewed on 31 October 2026. Project scope, releases, licences, policies, support and runtime availability vary. A public repository or URL does not prove that a product is released, available, production-ready, supported or licensed for unrestricted reuse. Unknown information is labeled unpublished rather than guessed. This site is English-only and embeds no third-party analytics.

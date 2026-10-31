@@ -1,6 +1,6 @@
 # GitHub Pages deployment (branch root)
 
-This repository is a plain static website: `index.html`, `styles.css`, `script.js`, and its SVG assets are all served directly from the repository root. There is no framework build step and no GitHub Actions deployment workflow.
+This repository is a plain static website: the homepage, content pages, styles, small JavaScript enhancement, PNG/SVG assets, sitemap and robots file are served directly from the repository root and its subdirectories. There is no framework build step and no GitHub Actions deployment workflow.
 
 ## GitHub Pages settings
 
