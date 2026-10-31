@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/profile-banner.svg" alt="Gothwad Tech — Useful software. Built in the open." width="100%">
+  <img src="profile-banner.svg" alt="Gothwad Tech — Useful software. Built in the open." width="100%">
 </p>
 
 <p align="center">

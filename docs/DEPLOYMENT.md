@@ -1,40 +1,19 @@
-# GitHub Pages deployment
+# GitHub Pages deployment (branch root)
 
-The repository uses the GitHub Actions Pages deployment flow. It can deploy
-before and after the planned repository rename, and selects the correct path
-for each name.
+This repository is a plain static website: `index.html`, `styles.css`, `script.js`, and its SVG assets are all served directly from the repository root. There is no framework build step and no GitHub Actions deployment workflow.
 
-## Before renaming
+## GitHub Pages settings
 
-1. In **GothwadTech / gothwadtech → Settings → Pages**, set **Build and
-deployment → Source** to **GitHub Actions**.
-2. Merge the reviewed PR into `main`. The workflow publishes the project site at
-   <https://gothwadtech.github.io/gothwadtech/> while the repository is still
-   named `gothwadtech`.
-3. Check the Actions run succeeds and review the temporary project URL.
+In **GothwadTech / gothwadtech.github.io → Settings → Pages** set:
 
-## After renaming to `GothwadTech.github.io`
+1. **Build and deployment → Source:** `Deploy from a branch`.
+2. **Branch:** `main`.
+3. **Folder:** `/(root)`.
+4. Click **Save**.
+5. Keep **Custom domain** empty when using `https://gothwadtech.github.io/`. Leave **Enforce HTTPS** enabled.
 
-1. Rename this repository to exactly **`GothwadTech.github.io`** in GitHub
-   repository settings.
-2. In **Settings → Pages**, confirm **GitHub Actions** remains the source.
-3. Run **Deploy GitHub Pages** from the Actions tab, or push a new commit. The
-   build detects the new repository name and uses `/` as its asset base.
-4. Verify <https://gothwadtech.github.io/>, its assets, sitemap, and browser
-   console.
+After saving, GitHub Pages will publish the root files from `main`. For updates, commit and push changes to `main`; allow a few minutes for Pages to publish them. No npm install, build command, or Actions workflow is required.
 
-GitHub serves the root user-site URL only when the repository is named exactly
-`GothwadTech.github.io`. The special account profile README belongs in the
-separate `GothwadTech/gothwadtech` repository, not in this site repository.
+The `.nojekyll` file tells Pages to serve the static repository contents without a Jekyll build. The profile banner and favicon are also kept at the repository root so their paths work with this setup.
 
-## Local preview
-
-```sh
-npm ci
-npm run build
-npm run preview
-```
-
-Local builds use `/`. GitHub Actions automatically builds with
-`/gothwadtech/` before the rename and `/` afterward; `robots.txt` and
-`sitemap.xml` are generated with the matching canonical URL.
+The special account profile README belongs in the separate `GothwadTech/gothwadtech` repository, not in this site repository.

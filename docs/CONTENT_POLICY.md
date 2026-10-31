@@ -26,4 +26,5 @@ showcase. The account profile README will live in the separate
 
 For general company information, link to the official site. For technical
 information, link to the repository or documentation page. Record substantive
-changes in `TASK.md` and run `npm run verify`.
+changes in `TASK.md` and check the page with a static HTTP server before
+publishing.
