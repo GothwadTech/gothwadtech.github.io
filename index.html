@@ -2,22 +2,115 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0b0d10" />
     <meta name="description" content="Gothwad Tech builds a connected set of useful software products. Explore public projects, source repositories and developer documentation." />
     <meta name="author" content="Gothwad Tech" />
+    <meta name="google-site-verification" content="pYxxe1yYj89k_CXbmwVEFsPIOWaX4PmJ2lKOb-HzIPY" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://gothwadtech.github.io%BASE_URL%" />
-    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+    <link rel="canonical" href="https://gothwadtech.github.io/" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://gothwadtech.github.io%BASE_URL%" />
+    <meta property="og:url" content="https://gothwadtech.github.io/" />
     <meta property="og:title" content="Gothwad Tech — Useful software, built in the open" />
     <meta property="og:description" content="Explore Gothwad Tech's software projects, public repositories and developer documentation." />
     <meta name="twitter:card" content="summary" />
     <title>Gothwad Tech — Useful software, built in the open</title>
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <main>
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Gothwad Tech home">
+          <span class="brand-mark">G<span>.</span></span>
+          <span>GOTHWAD<span class="brand-light">TECH</span></span>
+        </a>
+        <button type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation" class="mobile-menu">
+          <svg class="menu-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+          <svg class="close-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m18 6-12 12M6 6l12 12" /></svg>
+        </button>
+        <nav class="nav" id="main-navigation" aria-label="Main navigation">
+          <a href="#work">Projects</a>
+          <a href="#approach">How we build</a>
+          <a href="https://docs.gothwadtech.com">Documentation <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg></a>
+          <a class="nav-cta" href="https://github.com/GothwadTech" target="_blank" rel="noreferrer">GitHub <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg></a>
+        </nav>
+      </header>
+
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span> INDEPENDENT SOFTWARE STUDIO <span class="eyebrow-line"></span></div>
+          <h1>Good software<br />should feel <span>inevitable.</span></h1>
+          <p class="hero-lede">Gothwad Tech is building a connected set of useful products — from identity and communication to tools for the devices people use every day.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">Explore the work <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" /></svg></a>
+            <a class="text-link" href="https://gothwadtech.com" target="_blank" rel="noreferrer">Visit the official website <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg></a>
+          </div>
+          <div class="hero-footnote"><span>BUILT IN PUBLIC</span><span class="footnote-divider"></span> Independent projects. Public repositories. Clear boundaries.</div>
+        </div>
+        <div class="hero-art" aria-label="Abstract illustration of connected software systems" role="img">
+          <div class="art-grid"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="art-crosshair crosshair-one"></div><div class="art-crosshair crosshair-two"></div>
+          <div class="art-label label-top">SYSTEMS / 01</div><div class="art-label label-bottom">A CONNECTED PRACTICE</div>
+          <div class="core-glow"></div>
+          <div class="core"><span class="core-symbol">G<span>.</span></span><span class="core-caption">GOTHWAD<br />TECH</span></div>
+          <div class="orbit-node node-a"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a7 7 0 0 0-4 12.74V19a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-3.26A7 7 0 0 0 12 3Z"/><path d="M9 10a3 3 0 0 1 6 0c0 1.2-.7 1.8-1.5 2.5-.6.5-1 1-1 1.5M12 17h.01"/></svg></div>
+          <div class="orbit-node node-b"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+          <div class="orbit-node node-c"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+          <div class="signal signal-a"></div><div class="signal signal-b"></div><div class="signal signal-c"></div>
+          <div class="art-index">01—06<br /><span>PROJECTS</span></div>
+        </div>
+        <a class="scroll-cue" href="#work"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7 17 17M8 17h9V8" /></svg> SCROLL TO EXPLORE</a>
+      </section>
+
+      <section class="intro-strip" id="approach">
+        <div class="section-kicker">A CONNECTED PRACTICE <span>—</span> 2026</div>
+        <p>Not another list of promises.<br /><strong>A growing body of software, built in the open.</strong></p>
+        <div class="focus-list">
+          <article class="focus-item"><span class="focus-number">01</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a7 7 0 0 0-4 12.74V19a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-3.26A7 7 0 0 0 12 3Z"/><path d="M9 10a3 3 0 0 1 6 0c0 1.2-.7 1.8-1.5 2.5-.6.5-1 1-1 1.5M12 17h.01"/></svg><div><h3>Identity &amp; access</h3><p>Accounts · OAuth · shared sign-in</p></div><svg class="focus-arrow inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg></article>
+          <article class="focus-item"><span class="focus-number">02</span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4M7 8h4m-4 4h10"/></svg><div><h3>Everyday software</h3><p>Mail · Drive · Meet · Store</p></div><svg class="focus-arrow inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg></article>
+          <article class="focus-item"><span class="focus-number">03</span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg><div><h3>Apps &amp; devices</h3><p>Android · browser · communication</p></div><svg class="focus-arrow inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg></article>
+        </div>
+      </section>
+
+      <section class="work-section" id="work">
+        <div class="section-heading">
+          <div><div class="section-kicker">SELECTED PROJECTS <span>—</span> 01 / 06</div><h2>Made to be <span>useful.</span></h2></div>
+          <p>Explore product projects and their source repositories. Availability and feature details can change; the source repo is the best place to verify implementation.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card color-blue"><div class="project-top"><span class="project-number">01</span><span class="project-type">IDENTITY · WEB</span><svg class="project-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a7 7 0 0 0-4 12.74V19a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-3.26A7 7 0 0 0 12 3Z"/><path d="M9 10a3 3 0 0 1 6 0c0 1.2-.7 1.8-1.5 2.5-.6.5-1 1-1 1.5M12 17h.01"/></svg></div><h3>Gothwad Accounts</h3><p>The shared identity and sign-in layer used across Gothwad products.</p><div class="project-bottom"><span class="repo-label"><span class="repo-dot"></span> accounts</span><div class="project-links"><a href="https://accounts.gothwadtech.com" target="_blank" rel="noreferrer" aria-label="Open Gothwad Accounts website"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20Z"/></svg> Visit</a><a href="https://github.com/GothwadTech/accounts" target="_blank" rel="noreferrer" aria-label="View Gothwad Accounts source repository"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Source</a></div></div></article>
+          <article class="project-card color-violet"><div class="project-top"><span class="project-number">02</span><span class="project-type">PRODUCTIVITY · WEB</span><svg class="project-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><h3>Gothwad Mail</h3><p>A webmail client connected to Gothwad Accounts, with its own Mail API.</p><div class="project-bottom"><span class="repo-label"><span class="repo-dot"></span> mail</span><div class="project-links"><a href="https://mail.gothwadtech.com" target="_blank" rel="noreferrer" aria-label="Open Gothwad Mail website"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20Z"/></svg> Visit</a><a href="https://github.com/GothwadTech/mail" target="_blank" rel="noreferrer" aria-label="View Gothwad Mail source repository"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Source</a></div></div></article>
+          <article class="project-card color-mint"><div class="project-top"><span class="project-number">03</span><span class="project-type">COMMUNICATION · WEB + ANDROID</span><svg class="project-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.48m-8.48 0a6 6 0 0 1 0-8.48m11.31-2.83a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg></div><h3>GrixChat</h3><p>A messaging project with separate web and Android repositories.</p><div class="project-bottom"><span class="repo-label"><span class="repo-dot"></span> grixchat</span><div class="project-links"><a href="https://grixchat.gothwadtech.com" target="_blank" rel="noreferrer" aria-label="Open GrixChat website"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20Z"/></svg> Visit</a><a href="https://github.com/GothwadTech/grixchat" target="_blank" rel="noreferrer" aria-label="View GrixChat source repository"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Source</a></div></div></article>
+          <article class="project-card color-blue"><div class="project-top"><span class="project-number">04</span><span class="project-type">ANDROID · TV</span><svg class="project-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20Z"/></svg></div><h3>Gothwad Browser</h3><p>An Android browser project with a focus on phones, TVs and remote input.</p><div class="project-bottom"><span class="repo-label"><span class="repo-dot"></span> browser</span><div class="project-links"><a href="https://browser.gothwadtech.com" target="_blank" rel="noreferrer" aria-label="Open Gothwad Browser website"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20Z"/></svg> Visit</a><a href="https://github.com/GothwadTech/browser" target="_blank" rel="noreferrer" aria-label="View Gothwad Browser source repository"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Source</a></div></div></article>
+          <article class="project-card color-amber"><div class="project-top"><span class="project-number">05</span><span class="project-type">EDUCATION · WEB + ANDROID</span><svg class="project-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m2 10 10-5 10 5-10 5-10-5Z"/><path d="M6 12v5c4 3 8 3 12 0v-5M22 10v6"/></svg></div><h3>Gothwad Education</h3><p>A school management and learning platform with web and Android projects.</p><div class="project-bottom"><span class="repo-label"><span class="repo-dot"></span> education</span><div class="project-links"><a href="https://edu.gothwadtech.com" target="_blank" rel="noreferrer" aria-label="Open Gothwad Education website"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20Z"/></svg> Visit</a><a href="https://github.com/GothwadTech/education" target="_blank" rel="noreferrer" aria-label="View Gothwad Education source repository"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Source</a></div></div></article>
+          <article class="project-card color-violet"><div class="project-top"><span class="project-number">06</span><span class="project-type">DEVELOPER TOOLS · WEB</span><svg class="project-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 17-5-5 5-5m8 10 5-5-5-5m-3 12 2-14"/></svg></div><h3>Gothwad AI Studio</h3><p>A mobile-first workspace for browsing and working with GitHub repositories.</p><div class="project-bottom"><span class="repo-label"><span class="repo-dot"></span> ai</span><div class="project-links"><a href="https://ai.gothwadtech.com" target="_blank" rel="noreferrer" aria-label="Open Gothwad AI Studio website"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20Z"/></svg> Visit</a><a href="https://github.com/GothwadTech/ai" target="_blank" rel="noreferrer" aria-label="View Gothwad AI Studio source repository"><svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.44 5.44 0 0 0 3.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Source</a></div></div></article>
+        </div>
+        <div class="work-footer"><span>Curated from public Gothwad Tech repositories.</span><a href="https://github.com/GothwadTech" target="_blank" rel="noreferrer">Browse all repositories <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" /></svg></a></div>
+      </section>
+
+      <section class="principles">
+        <div class="principles-left"><div class="section-kicker">ENGINEERING, NOT HYPE <span>—</span> 02</div><h2>Say what’s true.<br /><span>Show the work.</span></h2></div>
+        <div class="principles-right">
+          <p>Gothwad Tech’s public repositories span web apps, Android apps, shared identity and developer documentation. Each project has its own scope, maturity and setup; we keep those distinctions visible.</p>
+          <div class="principle-row"><span>01</span><div><h3>Source is the reference</h3><p>Read the project README and linked docs for current implementation details.</p></div></div>
+          <div class="principle-row"><span>02</span><div><h3>Not every repo is a release</h3><p>A public repository is not, by itself, a promise of production readiness or support.</p></div></div>
+          <div class="principle-row"><span>03</span><div><h3>Built for real contexts</h3><p>Projects range from Android and TV experiences to web applications and backend services.</p></div></div>
+        </div>
+      </section>
+
+      <section class="closing-cta">
+        <div class="closing-mark">G<span>.</span></div>
+        <div><div class="section-kicker">FOLLOW THE BUILD</div><h2>Curious what’s next?</h2><p>See the code, read the docs, or start with the official Gothwad Tech site.</p></div>
+        <div class="closing-links"><a href="https://github.com/GothwadTech" target="_blank" rel="noreferrer">Explore GitHub <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg></a><a href="https://docs.gothwadtech.com" target="_blank" rel="noreferrer">Read the docs <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg></a><a href="https://gothwadtech.com" target="_blank" rel="noreferrer">Official website <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg></a></div>
+      </section>
+
+      <footer class="footer">
+        <a class="brand footer-brand" href="#top"><span class="brand-mark">G<span>.</span></span><span>GOTHWAD<span class="brand-light">TECH</span></span></a>
+        <span>Independent software, in progress.</span>
+        <div><a href="https://github.com/GothwadTech" target="_blank" rel="noreferrer">GitHub <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg></a><span>© <span id="current-year">2026</span> Gothwad Tech</span></div>
+      </footer>
+    </main>
   </body>
 </html>
